@@ -8,13 +8,20 @@ public class Main {
         int[] freq=new int[26];
 
         for(int i=0;i<userInput.length();i++)
-            freq[userInput.charAt(i)-'a']++;
+            freq[hash(userInput.charAt(i))]++;
+        
+          
+        for (int i=0; i< userInput.length();i++)
+             int index = hash(userInput.charAt(i));
+            if (freq[index]==1){
+               System.out.print(userInput.charAt(i) );
+        break;
 
-        for (int i=0; i< freq.length;i++)
-            if (freq[i]==1)
 
-                    System.out.print((char) (i + 97) );
 
+    }
+    public static int hash(int c) {
+        return c - 'a' ;
     }
 
 }
